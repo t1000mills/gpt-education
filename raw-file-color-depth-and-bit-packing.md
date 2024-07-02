@@ -20,11 +20,11 @@
    - Byte 4: `00010000` (upper 6 bits of Pixel 2 + padding bits)
    
 3. **Efficiency of Packing**:
-   - **a) Storage Efficiency**: Although each packed pixel still occupies 4 bytes, packing is more efficient than using 16 bits per pixel without packing (where each pixel would occupy 2 bytes). This is because it aligns data in a way that suits memory access patterns and optimizes storage space without compromising data integrity.
-   - **b) Pair Packing**: Packing pixels in pairs is often optimal due to hardware and processing considerations. While packing multiple pixels together (like 8 pixels in 14 bytes) could theoretically reduce wasted bits, pair packing is typically chosen for:
+   - **a) Pair Packing**: Packing pixels in pairs is often optimal due to hardware and processing considerations. While packing multiple pixels together (like 8 pixels in 14 bytes) could theoretically reduce wasted bits, pair packing is typically chosen for:
      - **Memory Alignment**: Ensuring efficient memory usage and compatibility with hardware architectures.
      - **Processing Efficiency**: Simplifying the decoding process and allowing for faster processing speeds, crucial in real-time applications.
      - **Error Handling**: Minimizing the impact of data corruption and ensuring robust data transmission and storage.
+   - **b) Storage Efficiency**: Although each packed pixel-pair still occupies 4 bytes, packing is more efficient than using 16 bits per pixel without packing (where each pixel would occupy 2 bytes). This is because it aligns data in a way that suits memory access patterns and optimizes storage space without compromising data integrity.
 
 #### TIFF Structure and .ARW Format
 - **TIFF Standard**: Sony’s .ARW format adheres to the TIFF (Tagged Image File Format) standard as a container for RAW image data.
